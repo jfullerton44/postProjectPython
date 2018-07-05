@@ -1,0 +1,20 @@
+import csv
+import json
+
+
+csv_rows = []
+with open('results.csv') as csvfile:
+    reader = csv.DictReader(csvfile)
+    title = reader.fieldnames
+    for row in reader:
+        csv_rows.extend([{title[i]: row[title[i]] for i in range(len(title))}])
+lastrow = csv_rows[len(csv_rows)-1]
+
+def write_json(data, json_file, format):
+    with open(json_file, "w") as f:
+        if format == "pretty":
+            f.write(json.dumps(data, sort_keys=False, indent=4, separators=(',', ': ')))
+        else:
+            f.write(json.dumps(data))
+
+write_json(lastrow, 'results.json', 'pretty')

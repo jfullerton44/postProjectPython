@@ -29,6 +29,7 @@ def sendMail(emailaddr):
     msg['To'] = toaddr
     msg['Subject'] = "Verification of New Project"
 
+    body = "Please review your project details in the attached document."+"\n \n When you have verified the information is correct, send an email to " \
                                                    ""+ emailaddr +" with the following text body: \n \n \n" \
            " Thank you for your interest in creating a project. \nIn order to finalize" \
            " your project in our system please visit this link (https://ixo-create-project.herokuapp.com/) and paste the" \

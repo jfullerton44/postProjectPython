@@ -23,15 +23,18 @@ def sendMail(emailaddr):
     fromaddr = "ixoverify@gmail.com"
 
     # Where to send JSON to be verified
-    toaddr = "jake.fullerton@trustlab.tech"
-    toaddr = "fullertonj44@gmail.com"
     toaddr = emailaddr
 
     msg['From'] = fromaddr
     msg['To'] = toaddr
     msg['Subject'] = "Verification of New Project"
 
-    body = "Thank you for your interst in creating a project. \nIn order to finalize your project in our system please visit this link (https://ixo-create-project.herokuapp.com/) and paste the text below into the text box and click ixo Sign and Verify. \n \n"+ json_mylist + "\n"
+    body = "Project information: \n \n "+ json.dumps(d, sort_keys=True, indent=4) +"\n \n When you have verified the information is correct, send an email to " \
+                                                   ""+ emailaddr +" with the following text body: \n \n \n" \
+           " Thank you for your interest in creating a project. \nIn order to finalize" \
+           " your project in our system please visit this link (https://ixo-create-project.herokuapp.com/) and paste the" \
+           " text below into the text box and click ixo Sign and Verify. \n \n"+ json_mylist + "\n"
+
     msg.attach(MIMEText(body, 'plain'))
 
     filename = "results.json"

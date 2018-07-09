@@ -1,22 +1,22 @@
 {
     "founder": {
-        "name": "George",
+        "name": "george",
         "countryOfOrigin": "United States",
         "websiteURL": "",
         "logoLink": "",
-        "shortDescription": "make the world a better place",
-        "email": ""
+        "shortDescription": "make the word a better place",
+        "email": "yes@gmail.com"
     },
-    "sdgs": "15",
+    "sdgs": "",
     "evaluatorPayPerClaim": "",
-    "ownerEmail": "fullertonj44@gmail.com",
+    "ownerEmail": "eae4bf@virginia.edu",
     "ownerName": "george",
-    "shortDescription": "We need to save water.",
+    "shortDescription": "planting more trees",
     "requiredClaims": "100",
-    "title": "Water Conservation",
-    "impactAction": "Buckets of Water ",
+    "title": "water conservation",
+    "impactAction": "trees planted",
     "projectLocation": "United States",
-    "longDescription": "We need to save water. ",
+    "longDescription": "planting more trees",
     "templates": {
         "form": "",
         "schema": ""

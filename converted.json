@@ -1,40 +1,31 @@
 {
-    "": "",
-    "Project founder name": "George",
-    "requiredClaims": "100",
+    "founder": {
+        "name": "George",
+        "countryOfOrigin": "United States",
+        "websiteURL": "",
+        "logoLink": "",
+        "shortDescription": "make the world a better place",
+        "email": ""
+    },
     "sdgs": "15",
-    "impactAction": "Buckets of Water ",
-    "Please select one or more SDGs that apply to your project": "1. No poverty, 4. Quality education",
+    "evaluatorPayPerClaim": "",
     "ownerEmail": "fullertonj44@gmail.com",
-    "Founder email": "",
     "ownerName": "george",
-    "Project founder country of origin": "United States",
-    "A picture is worth a thousand words. Send us a high quality picture that best describes your project": "",
-    "Website": "",
+    "shortDescription": "We need to save water.",
+    "requiredClaims": "100",
     "title": "Water Conservation",
-    "Timestamp": "7/4/2018 12:05:26",
-    "How many requirements for completion does your project have?": "Two",
+    "impactAction": "Buckets of Water ",
     "projectLocation": "United States",
-    "What are the requirements for the service provider to join your project e.g. medical qualification, drivers license": "must be a human",
     "longDescription": "We need to save water. ",
     "templates": {
         "form": "",
         "schema": ""
     },
-    "Please describe your project in a short sentence": "We need to save water.",
     "socialMedia": {
         "facebookLink": "",
         "instagramLink": "",
         "twitterLink": "",
         "webLink": ""
     },
-    "What are the requirements for the evaluating agent to approve your project ": "must have eyes",
-    "Your email address": "",
-    "evaluatorPayPerClaim": "",
-    "What is the estimated project duration e.g. 2 years": "2",
-    "shortDescription": "make the world a better place",
-    "Requirement #1": "Picture of a bucket of water",
-    "Requirement #3": "",
-    "Would you like to include the logo?": "",
-    "Requirement #2": "Receipt of something"
+    "imageLink": ""
 }

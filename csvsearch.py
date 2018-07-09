@@ -28,6 +28,7 @@ def convert_json():
     data = json.loads(data_file)
 
     data['socialMedia'] = {}
+    data['founder'] = {}
 
     for key in data.keys():
 
@@ -46,7 +47,7 @@ def convert_json():
             data[newKey] = data[key]
             data.pop(key, None)
 
-        elif key == 'Short description ':
+        elif key == 'Please describe your project in a short sentence':
             newKey = 'shortDescription'
             data[newKey] = data[key]
             data.pop(key, None)
@@ -81,26 +82,66 @@ def convert_json():
             data[newKey] = data[key]
             data.pop(key, None)
 
-        elif key == 'Facebook' or 'Instagram' or 'Twitter' or 'Website URL':
-            if key == 'Facebook':
-                newKey = 'facebookLink'
-                data['socialMedia'][newKey] = data[key]
-                data.pop(key, None)
+        elif key == 'Facebook':
+            newKey = 'facebookLink'
+            data['socialMedia'][newKey] = data[key]
+            data.pop(key, None)
 
-            elif key == 'Instagram':
-                newKey = 'instagramLink'
-                data['socialMedia'][newKey] = data[key]
-                data.pop(key, None)
+        elif key == 'Instagram':
+            newKey = 'instagramLink'
+            data['socialMedia'][newKey] = data[key]
+            data.pop(key, None)
 
-            elif key == 'Twitter':
-                newKey = 'twitterLink'
-                data['socialMedia'][newKey] = data[key]
-                data.pop(key, None)
+        elif key == 'Twitter':
+            newKey = 'twitterLink'
+            data['socialMedia'][newKey] = data[key]
+            data.pop(key, None)
 
-            elif key == "Website URL":
-                newKey = 'webLink'
-                data['socialMedia'][newKey] = data[key]
-                data.pop(key, None)
+        elif key == "Website":
+            newKey = 'webLink'
+            data['socialMedia'][newKey] = data[key]
+            data.pop(key, None)
+
+        elif key == 'socialMedia':
+            pass
+
+        elif key == 'A picture is worth a thousand words. Send us a high quality picture that best describes your project':
+            newKey = 'imageLink'
+            data[newKey] = data[key]
+            data.pop(key, None)
+
+        elif key == 'Project founder name':
+            newKey = 'name'
+            data['founder'][newKey] = data[key]
+            data.pop(key, None)
+
+        elif key == 'Founder email':
+            newKey = 'email'
+            data['founder'][newKey] = data[key]
+            data.pop(key, None)
+
+        elif key == 'Project founder country of origin':
+            newKey = 'countryOfOrigin'
+            data['founder'][newKey] = data[key]
+            data.pop(key, None)
+
+        elif key == 'Short description ':
+            newKey = 'shortDescription'
+            data['founder'][newKey] = data[key]
+            data.pop(key, None)
+
+        elif key == 'Website URL':
+            newKey = 'websiteURL'
+            data['founder'][newKey] = data[key]
+            data.pop(key, None)
+
+        elif key == 'Would you like to include the logo?':
+            newKey = 'logoLink'
+            data['founder'][newKey] = data[key]
+            data.pop(key, None)
+
+        elif key == 'founder':
+            pass
 
         else:
             data.pop(key, None)

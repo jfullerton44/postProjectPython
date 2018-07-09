@@ -1,0 +1,31 @@
+{
+    "founder": {
+        "name": "George",
+        "countryOfOrigin": "United States",
+        "websiteURL": "",
+        "logoLink": "",
+        "shortDescription": "make the world a better place",
+        "email": ""
+    },
+    "sdgs": "15",
+    "evaluatorPayPerClaim": "",
+    "ownerEmail": "fullertonj44@gmail.com",
+    "ownerName": "george",
+    "shortDescription": "We need to save water.",
+    "requiredClaims": "100",
+    "title": "Water Conservation",
+    "impactAction": "Buckets of Water ",
+    "projectLocation": "United States",
+    "longDescription": "We need to save water. ",
+    "templates": {
+        "form": "",
+        "schema": ""
+    },
+    "socialMedia": {
+        "facebookLink": "",
+        "instagramLink": "",
+        "twitterLink": "",
+        "webLink": ""
+    },
+    "imageLink": ""
+}

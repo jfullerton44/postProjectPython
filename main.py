@@ -3,11 +3,9 @@ import json
 from time import sleep
 import quickstart
 import emailsend
-import stripcsv
 import csvsearch
 
 def makeNewJSON():
-    # stripcsv.stripdoc()
     emailaddr = csvsearch.opencsv()
     # with open('new.csv') as f:
     #     reader = csv.DictReader(f)

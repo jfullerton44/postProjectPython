@@ -11,7 +11,7 @@ def sendMail(emailaddr):
     server.starttls()
     server.login("ixoverify@gmail.com", "IXOverification1")
 
-    with open('example.json') as json_data:
+    with open('results.json') as json_data:
         d = json.load(json_data)
         #print(d)
     json_mylist = json.dumps(d, separators=(',',':'))

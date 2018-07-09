@@ -7,14 +7,13 @@ import httplib2
 from googleapiclient import discovery, http
 from googleapiclient.http import MediaIoBaseDownload
 from oauth2client.client import SignedJwtAssertionCredentials
-import pandas as pd
 import json
 
 
 def newSheet():
     SCOPE = ['https://spreadsheets.google.com/feeds',
              'https://www.googleapis.com/auth/drive']
-    SECRETS_FILE = "userSheet.json"
+    SECRETS_FILE = "userSheet1.json"
     SPREADSHEET = "results"
 
     json_key = json.load(open(SECRETS_FILE))
@@ -37,8 +36,8 @@ def newSheet():
     # Get the first sheet
     sheet = workbook.sheet1
     # Extract all data into a dataframe
-    data = pd.DataFrame(sheet.get_all_records())
-    file_id = '14dduhfPnC8y9euY5pH7DKONmWR_wIV_UdOF0cSBPD9Q'
+    #data = pd.DataFrame(sheet.get_all_records())
+    #file_id = '14dduhfPnC8y9euY5pH7DKONmWR_wIV_UdOF0cSBPD9Q'
 
     filename = 'results.csv'
     with open(filename, 'wb') as f:

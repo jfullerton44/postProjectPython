@@ -48,3 +48,18 @@ def newSheet():
 
 
 def emailsentupdate(row):
+    SCOPE = ['https://spreadsheets.google.com/feeds',
+             'https://www.googleapis.com/auth/drive']
+    SECRETS_FILE = "userSheet.json"
+    SPREADSHEET = "results"
+
+    json_key = json.load(open(SECRETS_FILE))
+    # Authenticate using the signed key
+    credentials = SignedJwtAssertionCredentials(json_key['client_email'], json_key['private_key'], SCOPE)
+    gc = gspread.authorize(credentials)
+
+    # Open up the workbook based on the spreadsheet name
+    workbook = gc.open(SPREADSHEET)
+    # Get the first sheet
+    sheet = workbook.sheet1
+    sheet.update_acell('AG'+str(row), "Email Sent")

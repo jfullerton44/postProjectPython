@@ -22,7 +22,7 @@ def opencsv():
 
 def convert_json():
     in_file = open('results.json', 'r')
-    out_file = open('converted.json', 'w')
+    out_file = open('project.json', 'w')
 
     data_file = in_file.read()
     data = json.loads(data_file)

@@ -7,19 +7,8 @@ import csvsearch
 
 def makeNewJSON():
     emailaddr = csvsearch.opencsv()
-<<<<<<< HEAD
-    # with open('new.csv') as f:
-    #     reader = csv.DictReader(f)
-    #     rows = list(reader)
-    # with open('new.csv', 'rb') as f:
-    #     mycsv = csv.reader(f)
-    #     mycsv = list(mycsv)
-    #     emailaddr = mycsv[1][1]
-    # with open('results.json', 'w') as f:
-    #     json.dump(rows, f)
+
     csvsearch.convert_json()
-=======
->>>>>>> 5bd5c4587ef13d8fd6335bf40de7a7f0a0589bc3
     emailsend.sendMail(emailaddr)
 
 

@@ -11,7 +11,7 @@ def sendMail(emailaddr):
     server.starttls()
     server.login("ixoverify@gmail.com", "IXOverification1")
 
-    with open('converted.json') as json_data:
+    with open('project.json') as json_data:
         d = json.load(json_data)
         #print(d)
     json_mylist = json.dumps(d, separators=(',',':'))
@@ -37,8 +37,8 @@ def sendMail(emailaddr):
 
     msg.attach(MIMEText(body, 'plain'))
 
-    filename = "converted.json"
-    attachment = open("converted.json", "rb")
+    filename = "project.json"
+    attachment = open("project.json", "rb")
 
     part = MIMEBase('application', 'octet-stream')
     part.set_payload((attachment).read())

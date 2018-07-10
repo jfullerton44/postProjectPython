@@ -46,15 +46,5 @@ def newSheet():
         writer.writerows(sheet.get_all_values())
 
 
-
-
-    # file_id = '14dduhfPnC8y9euY5pH7DKONmWR_wIV_UdOF0cSBPD9Q'
-    # request = drive_service.files().export_media(fileId=file_id, mimeType='text/csv')
-    # fh = io.BytesIO()
-    # downloader = MediaIoBaseDownload(fh, request)
-    # done = False
-    # while done is False:
-    #     status, done = downloader.next_chunk()
-    #     print ("Download %d%%." % int(status.progress() * 100))
-
-   # print(data.head())
+def emailsentupdate(row):
+    

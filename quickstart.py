@@ -27,6 +27,7 @@ def newSheet():
     drive_service = discovery.build('drive', 'v3', http=http)
 
 
+ 
 
     # print("The following sheets are available")
     # for sheet in gc.openall():
@@ -47,4 +48,3 @@ def newSheet():
 
 
 def emailsentupdate(row):
-    

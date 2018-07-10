@@ -1,5 +1,6 @@
 import csv
 import json
+import emailsend
 
 
 def write_json(data, json_file, format):
@@ -8,17 +9,20 @@ def write_json(data, json_file, format):
             f.write(json.dumps(data, sort_keys=False, indent=4, separators=(',', ': ')))
         else:
             f.write(json.dumps(data))
+    convert_json()
 
-def opencsv():
+
+def open_csv(row1):
     csv_rows = []
     with open('results.csv') as csvfile:
         reader = csv.DictReader(csvfile)
         title = reader.fieldnames
         for row in reader:
             csv_rows.extend([{title[i]: row[title[i]] for i in range(len(title))}])
-    lastrow = csv_rows[len(csv_rows)-1]
-    write_json(lastrow, 'results.json', 'pretty')
-    return lastrow['Email Address']
+    # lastrow = csv_rows[len(csv_rows)-1]
+    write_json(row1, 'results.json', 'pretty')
+    return row1['Email Address']
+
 
 def convert_json():
     in_file = open('results.json', 'r')
@@ -152,5 +156,25 @@ def convert_json():
     out_file.write(json.dumps(data, sort_keys=False, indent=4, separators=(',', ': ')))
 
 
-convert_json()
 
+def verification_check():
+    with open('results.csv') as csvfile:
+        # verified = False
+        reader = csv.DictReader(csvfile)
+        titles = reader.fieldnames
+        for row in reader:
+            t = 0
+            while t < len(titles):
+                if titles[t] == 'Verified':
+                    if row[titles[t]] == '1':
+                        # verified = True
+
+                        # update spreadsheet to change to another number once 1 is found
+                        print row
+                        emailaddr = open_csv(row)
+                        emailsend.sendMail(emailaddr)
+
+                t = t + 1
+
+
+verification_check()

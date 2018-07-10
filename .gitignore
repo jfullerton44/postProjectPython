@@ -12,3 +12,6 @@ converted.json
 *.csv
 *.xml
 *.xml
+*.xml
+*.pyc
+*.pyc

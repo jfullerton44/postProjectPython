@@ -6,11 +6,6 @@ import emailsend
 import csvsearch
 import datetime
 
-def makeNewJSON():
-    emailaddr = csvsearch.opencsv()
-    emailsend.sendMail(emailaddr)
-
-
 numRows= 0
 firstRun = True
 while 1:

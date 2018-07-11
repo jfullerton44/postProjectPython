@@ -5,6 +5,8 @@ from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
 
+# this function sends an email to a given email address containing information to
+# finalize the creation of their project
 
 def sendMail(emailaddr):
     server = smtplib.SMTP('smtp.gmail.com', 587)

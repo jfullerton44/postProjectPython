@@ -16,4 +16,4 @@ while 1:
     inputfile = csv.reader(open('results.csv', 'r'))
     csvsearch.verification_check()
     print "Run Complete: " + str(datetime.datetime.now())
-    #sleep(5)
+    sleep(5)

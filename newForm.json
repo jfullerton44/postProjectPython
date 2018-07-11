@@ -1,0 +1,14 @@
+{
+    "fields": [
+        {
+            "type": "text",
+            "name": "Picture of a bucket of water",
+            "label": "Picture of a bucket of water"
+        },
+        {
+            "type": "text",
+            "name": "Receipt of something",
+            "label": "Receipt of something"
+        }
+    ]
+}

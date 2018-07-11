@@ -4,10 +4,10 @@ import csvsearch
 
 def createschema():
     # get json from googleDoc
-    project = json.load(open("C:\\Users\\George Magloire\\OneDrive\TrustLab\\postProjectPython\\results.json"))
+    project = json.load(open("results.json"))
 
     # load the blank schema
-    skeleton = json.load(open("C:\Users\George Magloire\OneDrive\TrustLab\postProjectPython\claimSchema.json"))
+    skeleton = json.load(open("claimSchema.json"))
 
     # define what a requirement looks like
     requirement = {
@@ -22,7 +22,14 @@ def createschema():
     # add project completion requirements to schema of project
     num_reqs = project["How many requirements for completion does your project have?"]
     i = 0
-    while i < int(num_reqs):
+    num = 0
+    if num_reqs == "One":
+        num = 1
+    elif num_reqs == "Two":
+        num = 2
+    elif num_reqs == "Three":
+        num = 3
+    while i < num:
         new_req_name = project["Requirement #" + (str(i + 1))]
         print ("Requirement name: " + new_req_name)
         skeleton["properties"]["payload"]["properties"]["data"]["properties"][new_req_name] = requirement
@@ -37,7 +44,7 @@ def createschema():
     print("Requirements: " + str(skeleton["properties"]["payload"]["properties"]["data"]["required"]))
 
     # create a new json file of completed template
-    csvsearch.write_json(skeleton, 'C:\\Users\\George Magloire\\OneDrive\\TrustLab\\postProjectPython\\newSchema.json.',
+    csvsearch.write_json(skeleton, 'newSchema.json',
                          'pretty')
 
 

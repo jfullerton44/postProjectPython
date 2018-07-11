@@ -4,15 +4,23 @@ import csvsearch
 
 def createform():
     # load the claim form skeleton
-    form_skeleton = json.load(open("C:\Users\George Magloire\OneDrive\TrustLab\postProjectPython\claimForm.json"))
+    form_skeleton = json.load(open("claimForm.json"))
 
     # load project and find number of requirements project has
-    project = json.load(open("C:\\Users\\George Magloire\\OneDrive\TrustLab\\postProjectPython\\results.json"))
+    project = json.load(open("results.json"))
     num_reqs = project["How many requirements for completion does your project have?"]
 
     # for each project requirement, create a corresponding section on the form
     i = 0
-    while i < int(num_reqs):
+    num = 0
+    if num_reqs == "One":
+        num=1
+    elif num_reqs == "Two":
+        num=2
+    elif num_reqs == "Three":
+        num=3
+
+    while i < num:
         fields = form_skeleton["fields"]
         fields.append({
             "label": "",
@@ -27,7 +35,7 @@ def createform():
 
     # create a new json file of completed form
     csvsearch.write_json(form_skeleton,
-                         'C:\\Users\\George Magloire\\OneDrive\\TrustLab\\postProjectPython\\newForm.json.',
+                         'newForm.json',
                          'pretty')
 
 

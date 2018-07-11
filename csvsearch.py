@@ -3,7 +3,8 @@ import json
 import emailsend
 import quickstart
 
-
+# this function writes new file 'results.json', and puts the data in a json format
+# then convert_json() is run to convert the json into the correct format
 def write_json(data, json_file, format):
     with open(json_file, "w") as f:
         if format == "pretty":
@@ -12,7 +13,7 @@ def write_json(data, json_file, format):
             f.write(json.dumps(data))
     convert_json()
 
-
+# this function calls write_json with the open csv file, and returns the email address of the client
 def open_csv(row1):
     csv_rows = []
     with open('results.csv') as csvfile:
@@ -24,7 +25,8 @@ def open_csv(row1):
     write_json(row1, 'results.json', 'pretty')
     return row1['Email Address']
 
-
+# this function converts the json 'results.json' into the correct format for the system, and
+# writes it into a new json called 'convert.json'
 def convert_json():
     in_file = open('results.json', 'r')
     out_file = open('project.json', 'w')
@@ -157,7 +159,8 @@ def convert_json():
     out_file.write(json.dumps(data, sort_keys=False, indent=4, separators=(',', ': ')))
 
 
-
+# this function checks to see if a number 1 is in the 'Verified' Column
+# if there is a 1, it runs open_csv and sends an email to the client
 def verification_check():
     with open('results.csv') as csvfile:
         # verified = False
@@ -175,7 +178,5 @@ def verification_check():
                         emailaddr = open_csv(row)
                         emailsend.sendMail(emailaddr)
                         quickstart.emailsentupdate(rownum)
-
-
                 t = t + 1
             rownum += 1

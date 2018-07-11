@@ -167,7 +167,7 @@ def verification_check():
         for row in reader:
             t = 0
             while t < len(titles):
-                if titles[t] == 'Verified':
+                if titles[t] == "Verified":
                     if row[titles[t]] == '1':
                         # verified = True
                         # update spreadsheet to change to another number once 1 is found

@@ -17,3 +17,4 @@ converted.json
 *.pyc
 results.csv
 project.json
+*.xml

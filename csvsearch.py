@@ -1,6 +1,7 @@
 import csv
 import json
 import emailsend
+import quickstart
 
 # this function writes new file 'results.json', and puts the data in a json format
 # then convert_json() is run to convert the json into the correct format
@@ -28,7 +29,7 @@ def open_csv(row1):
 # writes it into a new json called 'convert.json'
 def convert_json():
     in_file = open('results.json', 'r')
-    out_file = open('converted.json', 'w')
+    out_file = open('project.json', 'w')
 
     data_file = in_file.read()
     data = json.loads(data_file)
@@ -165,19 +166,19 @@ def verification_check():
         # verified = False
         reader = csv.DictReader(csvfile)
         titles = reader.fieldnames
+        rownum = 2
         for row in reader:
             t = 0
             while t < len(titles):
-                if titles[t] == 'Verified':
+                if titles[t] == "Verified":
                     if row[titles[t]] == '1':
                         # verified = True
-
                         # update spreadsheet to change to another number once 1 is found
                         print row
                         emailaddr = open_csv(row)
                         emailsend.sendMail(emailaddr)
+                        quickstart.emailsentupdate(rownum)
+
 
                 t = t + 1
-
-
-verification_check()
+            rownum += 1

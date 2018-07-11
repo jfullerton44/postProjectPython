@@ -6,4 +6,14 @@ results.json
 results.csv
 converted.json
 .idea/workspace.xml
+*.xml
+*.pyc
+*.json
+*.csv
+*.xml
+*.xml
+*.xml
+*.pyc
+*.pyc
+results.csv
 project.json

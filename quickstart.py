@@ -27,6 +27,7 @@ def newSheet():
     drive_service = discovery.build('drive', 'v3', http=http)
 
 
+ 
 
     # print("The following sheets are available")
     # for sheet in gc.openall():
@@ -46,15 +47,19 @@ def newSheet():
         writer.writerows(sheet.get_all_values())
 
 
+def emailsentupdate(row):
+    SCOPE = ['https://spreadsheets.google.com/feeds',
+             'https://www.googleapis.com/auth/drive']
+    SECRETS_FILE = "userSheet.json"
+    SPREADSHEET = "results"
 
+    json_key = json.load(open(SECRETS_FILE))
+    # Authenticate using the signed key
+    credentials = SignedJwtAssertionCredentials(json_key['client_email'], json_key['private_key'], SCOPE)
+    gc = gspread.authorize(credentials)
 
-    # file_id = '14dduhfPnC8y9euY5pH7DKONmWR_wIV_UdOF0cSBPD9Q'
-    # request = drive_service.files().export_media(fileId=file_id, mimeType='text/csv')
-    # fh = io.BytesIO()
-    # downloader = MediaIoBaseDownload(fh, request)
-    # done = False
-    # while done is False:
-    #     status, done = downloader.next_chunk()
-    #     print ("Download %d%%." % int(status.progress() * 100))
-
-   # print(data.head())
+    # Open up the workbook based on the spreadsheet name
+    workbook = gc.open(SPREADSHEET)
+    # Get the first sheet
+    sheet = workbook.sheet1
+    sheet.update_acell('AG'+str(row), "Email Sent")

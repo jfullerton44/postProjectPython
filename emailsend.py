@@ -11,7 +11,7 @@ def sendMail(emailaddr):
     server.starttls()
     server.login("ixoverify@gmail.com", "IXOverification1")
 
-    with open('converted.json') as json_data:
+    with open('project.json') as json_data:
         d = json.load(json_data)
         #print(d)
     json_mylist = json.dumps(d, separators=(',',':'))
@@ -29,16 +29,14 @@ def sendMail(emailaddr):
     msg['To'] = toaddr
     msg['Subject'] = "Verification of New Project"
 
-    body = "Please review the project details in the attached document."+"\n \n Once you have verified the project, send an email to " \
-                                                   ""+ emailaddr +" with the following text body: \n \n \n" \
-           " Thank you for your interest in creating a project. \nIn order to finalize" \
-           " your project in our system please visit the following link: https://ixo-create-project.herokuapp.com/. Paste the" \
+    body = " Thank you for your interest in creating a project. \nIn order to finalize" \
+           " your project in our system please visit this link (https://ixo-create-project.herokuapp.com/) and paste the" \
            " text below into the text box and click ixo Sign and Verify. \n \n"+ json_mylist + "\n"
 
     msg.attach(MIMEText(body, 'plain'))
 
-    filename = "converted.json"
-    attachment = open("converted.json", "rb")
+    filename = "project.json"
+    attachment = open("project.json", "rb")
 
     part = MIMEBase('application', 'octet-stream')
     part.set_payload((attachment).read())

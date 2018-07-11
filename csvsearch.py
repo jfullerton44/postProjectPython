@@ -25,6 +25,7 @@ def open_csv(row1):
     write_json(row1, 'results.json', 'pretty')
     return row1['Email Address']
 
+=======
 # this function converts the json 'results.json' into the correct format for the system, and
 # writes it into a new json called 'convert.json'
 def convert_json():

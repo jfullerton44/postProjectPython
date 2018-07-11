@@ -21,11 +21,9 @@ def open_csv(row1):
         title = reader.fieldnames
         for row in reader:
             csv_rows.extend([{title[i]: row[title[i]] for i in range(len(title))}])
-    # lastrow = csv_rows[len(csv_rows)-1]
     write_json(row1, 'results.json', 'pretty')
     return row1['Email Address']
 
-=======
 # this function converts the json 'results.json' into the correct format for the system, and
 # writes it into a new json called 'convert.json'
 def convert_json():

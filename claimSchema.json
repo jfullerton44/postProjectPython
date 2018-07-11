@@ -37,15 +37,6 @@
               "examples": [
                 "did:ixo:23423432"
               ]
-            },
-            "sectionId": {
-              "$id": "/properties/payload/properties/data/properties/sectionId",
-              "type": "string",
-              "title": "Section ID cleared",
-              "default": "",
-              "examples": [
-                "10001"
-              ]
             }
           },
           "required": [

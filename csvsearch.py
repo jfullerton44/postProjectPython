@@ -9,6 +9,7 @@ def write_json(data, json_file, format):
         else:
             f.write(json.dumps(data))
 
+
 def opencsv():
     csv_rows = []
     with open('results.csv') as csvfile:

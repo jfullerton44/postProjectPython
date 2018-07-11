@@ -1,4 +1,5 @@
 import json
+import csvsearch
 
 
 def createschema():
@@ -30,7 +31,14 @@ def createschema():
 
         # add the title of these requirements to "required" property in json
         skeleton["properties"]["payload"]["properties"]["data"]["required"].append(new_req_name)
-        print("Requirements: " + str(skeleton["properties"]["payload"]["properties"]["data"]["required"]))
         i += 1
+
+    # test output
+    print("Requirements: " + str(skeleton["properties"]["payload"]["properties"]["data"]["required"]))
+
+    # create a new json file of completed template
+    csvsearch.write_json(skeleton, 'C:\\Users\\George Magloire\\OneDrive\\TrustLab\\postProjectPython\\newSchema.json.',
+                         'pretty')
+
 
 createschema()

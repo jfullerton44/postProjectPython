@@ -1,0 +1,153 @@
+{
+    "$id": "http://ixofoundation/submit_claim.json",
+    "required": [
+        "payload",
+        "signature"
+    ],
+    "additionalProperties": false,
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "payload": {
+            "$id": "/properties/payload",
+            "additionalProperties": true,
+            "required": [
+                "data",
+                "template"
+            ],
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$id": "/properties/payload/properties/data",
+                    "additionalProperties": true,
+                    "required": [
+                        "Photo of yourself planting seed",
+                        "photo of seed",
+                        ""
+                    ],
+                    "type": "object",
+                    "properties": {
+                        "projectDid": {
+                            "$id": "/properties/payload/properties/data/properties/projectDid",
+                            "default": "",
+                            "type": "string",
+                            "examples": [
+                                "did:ixo:23423432"
+                            ],
+                            "title": "The project did"
+                        },
+                        "": {
+                            "$id": "/properties/payload/properties/data/properties/projectDid",
+                            "default": "",
+                            "type": "string",
+                            "examples": [],
+                            "title": ""
+                        },
+                        "photo of seed": {
+                            "$id": "/properties/payload/properties/data/properties/projectDid",
+                            "default": "",
+                            "type": "string",
+                            "examples": [],
+                            "title": ""
+                        },
+                        "Photo of yourself planting seed": {
+                            "$id": "/properties/payload/properties/data/properties/projectDid",
+                            "default": "",
+                            "type": "string",
+                            "examples": [],
+                            "title": ""
+                        },
+                        "sectionId": {
+                            "$id": "/properties/payload/properties/data/properties/sectionId",
+                            "default": "",
+                            "type": "string",
+                            "examples": [
+                                "10001"
+                            ],
+                            "title": "Section ID cleared"
+                        }
+                    }
+                },
+                "template": {
+                    "$id": "/properties/payload/properties/template",
+                    "required": [
+                        "name"
+                    ],
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "default": "",
+                            "type": "string",
+                            "examples": [
+                                "submit_claim"
+                            ],
+                            "title": "The Name Schema "
+                        }
+                    }
+                }
+            }
+        },
+        "signature": {
+            "$id": "/properties/signature",
+            "additionalProperties": false,
+            "required": [
+                "type",
+                "created",
+                "signatureValue",
+                "creator"
+            ],
+            "type": "object",
+            "properties": {
+                "creator": {
+                    "title": "The Creator Schema ",
+                    "$id": "/properties/signature/properties/creator",
+                    "required": [
+                        "creator"
+                    ],
+                    "default": "",
+                    "examples": [
+                        "did:ixo:987654321"
+                    ],
+                    "type": "string"
+                },
+                "type": {
+                    "title": "The Type Schema ",
+                    "$id": "/properties/signature/properties/type",
+                    "required": [
+                        "type"
+                    ],
+                    "default": "",
+                    "examples": [
+                        "ECDSA"
+                    ],
+                    "type": "string"
+                },
+                "signatureValue": {
+                    "title": "The Signature Schema ",
+                    "$id": "/properties/signature/properties/signatureValue",
+                    "required": [
+                        "signatureValue"
+                    ],
+                    "default": "",
+                    "examples": [
+                        "0x1d4a6d5efce1312944f781fb917b484f2ac0c74c53fe8b571dc8f1be6dc6b6692db3e3d08c0a934631f81bf0bba50c591385d34819ac955ec16f38ee04ee480201"
+                    ],
+                    "type": "string"
+                },
+                "created": {
+                    "title": "The Created Schema ",
+                    "$id": "/properties/signature/properties/created",
+                    "required": [
+                        "created"
+                    ],
+                    "default": "",
+                    "examples": [
+                        "2016-02-08T16:02:20Z"
+                    ],
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

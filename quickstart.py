@@ -26,11 +26,10 @@ def newSheet():
     http = credentials.authorize(httplib2.Http())
     drive_service = discovery.build('drive', 'v3', http=http)
 
-
  
 
     # print("The following sheets are available")
-    # for sheet in gc.openall():
+    # for sheet in gc.openall()
     #     print("{} - {}".format(sheet.title, sheet.id))
 
     # Open up the workbook based on the spreadsheet name

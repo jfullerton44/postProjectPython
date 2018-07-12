@@ -23,12 +23,18 @@ def createschema():
     num_reqs = project["How many requirements for completion does your project have?"]
     i = 0
     num = 0
-    if num_reqs == "One":
-        num = 1
-    elif num_reqs == "Two":
-        num = 2
-    elif num_reqs == "Three":
-        num = 3
+    try:
+        num_reqs = int(num_reqs)
+        num_reqs += 1
+        num_reqs -= 1
+        num = num_reqs
+    except TypeError:
+        if num_reqs == "One" or num_reqs == "one" or num_reqs == "1":
+            num = 1
+        elif num_reqs == "Two" or num_reqs == "two" or num_reqs == "2":
+            num = 2
+        elif num_reqs == "Three" or num_reqs == "three" or num_reqs == "3":
+            num = 3
     while i < num:
         new_req_name = project["Requirement #" + (str(i + 1))]
         print ("Requirement name: " + new_req_name)

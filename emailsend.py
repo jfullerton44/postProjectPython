@@ -15,8 +15,15 @@ def sendMail(emailaddr):
 
     with open('project.json') as json_data:
         d = json.load(json_data)
-        #print(d)
     json_mylist = json.dumps(d, separators=(',',':'))
+
+    with open('newForm.json') as json_data:
+        d = json.load(json_data)
+    json_myform = json.dumps(d, separators=(',',':'))
+
+    with open('newSchema.json') as json_data:
+        d = json.load(json_data)
+    json_myschema = json.dumps(d, separators=(',',':'))
 
     msg = "YOUR MESSAGE!"
 
@@ -33,7 +40,7 @@ def sendMail(emailaddr):
 
     body = " Thank you for your interest in creating a project. \nIn order to finalize" \
            " your project in our system please visit this link (https://ixo-create-project.herokuapp.com/) and paste the" \
-           " text below into the text box and click ixo Sign and Verify. \n \n"+ json_mylist + "\n"
+           " text below into the text box and click ixo Sign and Verify. \n \n"+ json_myform + "\n \n" +  json_myschema + "\n \n"+ json_mylist + "\n"
 
     msg.attach(MIMEText(body, 'plain'))
 

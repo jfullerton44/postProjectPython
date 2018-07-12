@@ -46,6 +46,3 @@ def createschema():
     # create a new json file of completed template
     csvsearch.write_json(skeleton, 'newSchema.json',
                          'pretty')
-
-
-createschema()

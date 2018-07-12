@@ -38,5 +38,3 @@ def createform():
                          'newForm.json',
                          'pretty')
 
-
-createform()

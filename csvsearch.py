@@ -2,6 +2,8 @@ import csv
 import json
 import emailsend
 import quickstart
+import createForm
+import createSchema
 
 # this function writes new file 'results.json', and puts the data in a json format
 # then convert_json() is run to convert the json into the correct format
@@ -174,6 +176,8 @@ def verification_check():
                         # verified = True
                         # update spreadsheet to change to another number once 1 is found
                         print row
+                        createForm.createform()
+                        createSchema.createschema()
                         emailaddr = open_csv(row)
                         emailsend.sendMail(emailaddr)
                         quickstart.emailsentupdate(rownum)

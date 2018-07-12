@@ -28,7 +28,7 @@ def createschema():
         num_reqs += 1
         num_reqs -= 1
         num = num_reqs
-    except TypeError:
+    except:
         if num_reqs == "One" or num_reqs == "one" or num_reqs == "1":
             num = 1
         elif num_reqs == "Two" or num_reqs == "two" or num_reqs == "2":

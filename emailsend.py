@@ -5,6 +5,7 @@ from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
 
+
 # this function sends an email to a given email address containing information to
 # finalize the creation of their project
 
@@ -15,15 +16,17 @@ def sendMail(emailaddr):
 
     with open('project.json') as json_data:
         d = json.load(json_data)
-    json_mylist = json.dumps(d, separators=(',',':'))
+    json_mylist = json.dumps(d, separators=(',', ':'))
 
+    print open('newForm.json')
     with open('newForm.json') as json_data:
         d = json.load(json_data)
-    json_myform = json.dumps(d, separators=(',',':'))
+    json_myform = json.dumps(d, separators=(',', ':'))
+    print 'JSON DATA', json_myform
 
     with open('newSchema.json') as json_data:
         d = json.load(json_data)
-    json_myschema = json.dumps(d, separators=(',',':'))
+    json_myschema = json.dumps(d, separators=(',', ':'))
 
     msg = "YOUR MESSAGE!"
 
@@ -38,21 +41,49 @@ def sendMail(emailaddr):
     msg['To'] = toaddr
     msg['Subject'] = "Verification of New Project"
 
-    body = " Thank you for your interest in creating a project. \nIn order to finalize" \
-           " your project in our system please visit this link (https://ixo-create-project.herokuapp.com/) and paste the" \
-           " text below into the text box and click ixo Sign and Verify. \n \n"+ json_myform + "\n \n" +  json_myschema + "\n \n"+ json_mylist + "\n"
+    html1 = """\
+    <html>
+        <head></head>
+        <body>
+            <p>Thank you for your interest in creating a project.
+                <br><br>
+                In order to finalize your project in our system please visit 
+                <a href="https://ixo-create-project.herokuapp.com/">this link</a>, 
+                and paste the schema, form, and project details found below into their respective text boxes.
+                <br><br><br>
+                <b>Schema</b>
+            </p>
+        </body>
+    </html>
+    """
+    html2 = """\
+    <html>
+        <head></head>
+        <body>
+            <p>
+                <br>
+                <b>Form</b>
+            </p>
+        </body>
+    </html>
+    """
 
-    msg.attach(MIMEText(body, 'plain'))
+    html3 = """\
+    <html>
+        <head></head>
+        <body>
+            <p>
+                <br>
+                <b>Project Details</b>
+            </p>
+        </body>
+    </html>
+     """
+    space = """\ <html><head></head><body></body><br><br><br></html>"""
 
-    filename = "project.json"
-    attachment = open("project.json", "rb")
+    complete = html1 + json_myschema + html2 + json_myform + html3 + json_mylist + space
 
-    part = MIMEBase('application', 'octet-stream')
-    part.set_payload((attachment).read())
-    encoders.encode_base64(part)
-    part.add_header('Content-Disposition', "attachment; filename= %s" % filename)
-
-    msg.attach(part)
+    msg.attach(MIMEText(complete, 'html'))
 
 
     text = msg.as_string()
@@ -62,3 +93,4 @@ def sendMail(emailaddr):
     except:
         print "Invalid Email"
     server.quit()
+

@@ -164,7 +164,6 @@ def convert_json():
 # if there is a 1, it runs open_csv and sends an email to the client
 def verification_check():
     with open('results.csv') as csvfile:
-        # verified = False
         reader = csv.DictReader(csvfile)
         titles = reader.fieldnames
         rownum = 2
@@ -173,7 +172,6 @@ def verification_check():
             while t < len(titles):
                 if titles[t] == "Verified":
                     if row[titles[t]] == '1':
-                        # verified = True
                         # update spreadsheet to change to another number once 1 is found
                         print row
                         createForm.createform()

@@ -13,12 +13,12 @@ def createform():
     # for each project requirement, create a corresponding section on the form
     i = 0
     num = 0
-    if num_reqs == "One":
-        num=1
-    elif num_reqs == "Two":
-        num=2
-    elif num_reqs == "Three":
-        num=3
+    if num_reqs == "One" or num_reqs == "one" or num_reqs == "1":
+        num = 1
+    elif num_reqs == "Two" or num_reqs == "two" or num_reqs == "2":
+        num = 2
+    elif num_reqs == "Three" or num_reqs == "three" or num_reqs == "3":
+        num = 3
 
     while i < num:
         fields = form_skeleton["fields"]
@@ -31,7 +31,7 @@ def createform():
         fields[i]["name"] = project["Requirement #" + str(i + 1)]
         i += 1
 
-    print form_skeleton
+    # print form_skeleton
 
     # create a new json file of completed form
     csvsearch.write_json(form_skeleton,

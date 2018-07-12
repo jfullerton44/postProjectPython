@@ -174,6 +174,7 @@ def verification_check():
                     if row[titles[t]] == '1':
                         # update spreadsheet to change to another number once 1 is found
                         print row
+                        emailaddr = open_csv(row)
                         createForm.createform()
                         createSchema.createschema()
                         emailaddr = open_csv(row)

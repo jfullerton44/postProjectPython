@@ -4,7 +4,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
-
+import emailcreds
 
 # this function sends an email to a given email address containing information to
 # finalize the creation of their project
@@ -12,7 +12,7 @@ from email import encoders
 def sendMail(emailaddr):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login("ixoverify@gmail.com", "IXOverification1")
+    server.login(emailcreds.login, emailcreds.password)
 
     with open('project.json') as json_data:
         d = json.load(json_data)

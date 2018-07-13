@@ -45,11 +45,11 @@ def sendMail(emailaddr):
     <html>
         <head></head>
         <body>
-            <p>Thank you for your interest in creating a project.
+            <p>Hello, \n Thank you for your interest in creating a project.
                 <br><br>
-                In order to finalize your project in our system please visit 
+                There is one final step to upload your project. Please visit
                 <a href="https://ixo-create-project.herokuapp.com/">this link</a>, 
-                and paste the schema, form, and project details found below into their respective text boxes.
+                and paste the schema, form and project details found below into their respective text boxes.
                 <br><br><br>
                 <b>Schema</b>
             </p>
@@ -77,6 +77,21 @@ def sendMail(emailaddr):
                 <b>Project Details</b>
             </p>
         </body>
+    </html>
+     """
+
+     html4 = """\
+     <html>
+        <head></head>
+        <body>
+            <p>
+                <br>
+                If you have any questions, just reply to this email.
+                \n Welcome to ixo.world!
+                \n Best wishes,
+                \n The ixo Team
+            </p>
+        </body> s
     </html>
      """
 

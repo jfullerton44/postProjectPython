@@ -87,8 +87,8 @@ def sendMail(emailaddr):
             <p>
                 <br>
                 If you have any questions, just reply to this email.
-                <br> Welcome to ixo.world!
-                <br> Best wishes,
+                <br><br> Welcome to ixo.world!
+                <br><br><br> Best wishes,
                 <br> The ixo Team
             </p>
         </body> 

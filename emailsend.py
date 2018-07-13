@@ -79,9 +79,8 @@ def sendMail(emailaddr):
         </body>
     </html>
      """
-    space = """\ <html><head></head><body></body><br><br><br></html>"""
 
-    complete = html1 + json_myschema + html2 + json_myform + html3 + json_mylist + space
+    complete = html1 + json_myschema + html2 + json_myform + html3 + json_mylist
 
     msg.attach(MIMEText(complete, 'html'))
 

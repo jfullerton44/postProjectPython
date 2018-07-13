@@ -80,8 +80,8 @@ def sendMail(emailaddr):
     </html>
      """
 
-     html4 = """\
-     <html>
+    html4 = """\
+    <html>
         <head></head>
         <body>
             <p>
@@ -91,11 +91,11 @@ def sendMail(emailaddr):
                 \n Best wishes,
                 \n The ixo Team
             </p>
-        </body> s
+        </body> 
     </html>
      """
 
-    complete = html1 + json_myschema + html2 + json_myform + html3 + json_mylist
+    complete = html1 + json_myschema + html2 + json_myform + html3 + json_mylist + html4
 
     msg.attach(MIMEText(complete, 'html'))
 

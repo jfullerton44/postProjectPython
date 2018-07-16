@@ -43,7 +43,7 @@ def sendMail(emailaddr):
     msg['Subject'] = "Verification of New Project"
 
     objectID = connecttodb.addToDB(json_myschema,json_myform,json_mylist)
-    url = "https://ixo-create-project.herokuapp.com/?variable="+ objectID
+    url = "https://ixo-create-project.herokuapp.com/?oidHex="+ objectID
     print url
     html1 = """\
     <html>

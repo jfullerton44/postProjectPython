@@ -5,6 +5,7 @@ from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
 import emailcreds
+import connecttodb
 
 # this function sends an email to a given email address containing information to
 # finalize the creation of their project
@@ -41,6 +42,9 @@ def sendMail(emailaddr):
     msg['To'] = toaddr
     msg['Subject'] = "Verification of New Project"
 
+    objectID = connecttodb.addToDB(json_myschema,json_myform,json_mylist)
+    url = "https://ixo-create-project.herokuapp.com/?oidHex="+ objectID
+    print url
     html1 = """\
     <html>
         <head></head>
@@ -48,7 +52,7 @@ def sendMail(emailaddr):
             <p>Hello, <br>Thank you for your interest in creating a project.
                 <br><br>
                 There is one final step to upload your project. Please visit
-                <a href="https://ixo-create-project.herokuapp.com/">this link</a>, 
+                <a href= {URL} >this link</a>, 
                 and paste the schema, form and project details found below into their respective text boxes.
                 <br><br><br>
                 <b>Schema</b>
@@ -56,6 +60,7 @@ def sendMail(emailaddr):
         </body>
     </html>
     """
+    html1 = html1.format(URL=url)
     html2 = """\
     <html>
         <head></head>

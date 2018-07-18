@@ -43,8 +43,12 @@ def sendMail(emailaddr):
     msg['Subject'] = "Verification of New Project"
 
     objectID = connecttodb.addToDB(json_myschema,json_myform,json_mylist)
+
+    #Creaete link to hosted page with the object ID from the database specified
     url = "https://ixo-create-project.herokuapp.com/?oidHex="+ objectID
     print url
+
+    #Create body of email
     html1 = """\
     <html>
         <head></head>
@@ -103,9 +107,9 @@ def sendMail(emailaddr):
     complete = html1 + json_myschema + html2 + json_myform + html3 + json_mylist + html4
 
     msg.attach(MIMEText(complete, 'html'))
-
-
     text = msg.as_string()
+    #Try to send email
+    #If address is invalid print invalid email
     try:
         server.sendmail(fromaddr, toaddr, text)
         print "Sent email to address:   " + toaddr

@@ -27,6 +27,7 @@ def newSheet():
     drive_service = discovery.build('drive', 'v3', http=http)
 
  
+    #Uncomment following lines to show all available sheets 
 
     # print("The following sheets are available")
     # for sheet in gc.openall()
@@ -49,6 +50,7 @@ def newSheet():
 def emailsentupdate(row):
     SCOPE = ['https://spreadsheets.google.com/feeds',
              'https://www.googleapis.com/auth/drive']
+    #userSheet.json must be generated to contain the google api credientials for the google result sheet
     SECRETS_FILE = "userSheet.json"
     SPREADSHEET = "results"
 

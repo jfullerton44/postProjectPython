@@ -1,5 +1,7 @@
 # postProjectPython
 
+Documentation located at: https://jfullerton44.github.io/postProjectPython/
+
 This project will use the results of a google form which gathers the information needed to create an ixo project. The project will parse the results of this google form in the linked google sheet and will export the data to a local csv file called “results.csv”. The project will then be verified by a staff member who will enter the number 1 in the google form spreadsheet results in the column titled “Verified”. Once a single row is detected to contain the number 1 in the “Verified” column, the client will then receive an email with the relevant information to complete the creation of their project.
 
 An essential file that is missing in this GitHub repository is a JSON file called “userSheet.json”. This file contains the secret API keys required to connect to the google sheet connected to the google form. This file can be generated on Google’s developer console.  This is an example of the template:

@@ -3,11 +3,12 @@
 In order for the program to run correctly a file must be inserted called emailcreds.py containing login information for a gmail address and a mongodb user.
 
 The format of the file is as follows:
-
-login = <Gmail login>
-password= <Gmail password>
-mongoUser = <Mongo username>
-mongoPassword = <Mongo Password>
+`````python
+  login = <Gmail login>
+  password= <Gmail password>
+  mongoUser = <Mongo username>
+  mongoPassword = <Mongo Password>
+`````
 
 The gmail login that you provide will be used to send out emails containing the information for the user to create a project and the mongo credientials will be used to store the data from the projcet so that it can be accessed by the front end react app when the projcet is going to be created.
 

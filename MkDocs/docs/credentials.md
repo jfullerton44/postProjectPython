@@ -16,11 +16,11 @@ Another essential file that is missing in this GitHub repository is a JSON file 
 
 ````json
   {"type": "service_account",
-  "project_id": “PROJECT ID,
-  "private_key_id": “PRIVATE KEY ID”,
-  "private_key": “PRIVATE KEY” ,
-  "client_email": “CLIENT EMAIL”,
-  "client_id": “CLIENT ID“,
+  "project_id": "PROJECT ID",
+  "private_key_id": "PRIVATE KEY ID",
+  "private_key": "PRIVATE KEY" ,
+  "client_email": "CLIENT EMAIL",
+  "client_id": "CLIENT ID",
   "auth_uri": "https://accounts.google.com/o/oauth2/auth",
   "token_uri": "https://accounts.google.com/o/oauth2/token",
   "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",

@@ -13,16 +13,16 @@ The gmail login that you provide will be used to send out emails containing the 
 
 Another essential file that is missing in this GitHub repository is a JSON file called “userSheet.json”. This file contains the secret API keys required to connect to the google sheet connected to the google form. This file can be generated on Google’s developer console.  This is an example of the template:
 
-```
+````json
   {"type": "service_account",
   "project_id": “PROJECT ID,
   "private_key_id": “PRIVATE KEY ID”,
-  "private_key": “PRIVATE KEY” 
+  "private_key": “PRIVATE KEY” ,
   "client_email": “CLIENT EMAIL”,
   "client_id": “CLIENT ID“,
   "auth_uri": "https://accounts.google.com/o/oauth2/auth",
   "token_uri": "https://accounts.google.com/o/oauth2/token",
   "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
   "client_x509_cert_url": "API URL"}
-  ```
+````
 

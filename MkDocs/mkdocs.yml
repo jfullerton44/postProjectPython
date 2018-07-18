@@ -1,1 +1,5 @@
-site_name: My Docs
+site_name: Post Project Python Backend
+pages:
+  - Home: index.md
+  - Credentials: credentials.md
+  - Usage: usage.md

@@ -3,3 +3,4 @@ pages:
   - Home: index.md
   - Credentials: credentials.md
   - Usage: usage.md
+theme: readthedocs

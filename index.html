@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="./img/favicon.ico">
-        <title>My Docs</title>
+        <title>Post Project Python Backend</title>
         <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="./css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="./css/base.css" rel="stylesheet">
@@ -31,11 +31,30 @@
 
         <!-- Collapsed navigation -->
         <div class="navbar-header">
-            <a class="navbar-brand" href=".">My Docs</a>
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href=".">Post Project Python Backend</a>
         </div>
 
         <!-- Expanded navigation -->
         <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href=".">Home</a>
+                    </li>
+                    <li >
+                        <a href="credentials/">Credentials</a>
+                    </li>
+                    <li >
+                        <a href="usage/">Usage</a>
+                    </li>
+                </ul>
 
             <ul class="nav navbar-nav navbar-right">
                 <li>
@@ -43,6 +62,16 @@
                         <i class="fa fa-search"></i> Search
                     </a>
                 </li>
+                    <li class="disabled">
+                        <a rel="next" >
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="credentials/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
             </ul>
         </div>
     </div>
@@ -51,28 +80,16 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#welcome-to-mkdocs">Welcome to MkDocs</a></li>
-            <li><a href="#commands">Commands</a></li>
-            <li><a href="#project-layout">Project layout</a></li>
+        <li class="main active"><a href="#overview">Overview</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="http://mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs help</code> - Print this help message.</li>
-</ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre></div>
+<h1 id="overview">Overview</h1>
+<p>When the program is run, it will check the google sheet for any new changes, and will run relevant tasks when the information has been changed. After the tasks have been run, the program will sleep  for a specified amount of time set in “main.py” (the default is 5 seconds). </p>
+<p>Upon finding changes in the google sheet the program will generate new json files for the project information, the schema, and the form for the supplied project. </p>
+<p>Curently the google api is limited to 50 writes per day on a free account.  This means that in theory only 50 projects can be created per day as after 50 writes the program will be unable to overwrite the 1 in the verified column and endless emails will be sent.</p>
+<p>This project also contains a Dockerfile which allows for the project to run in an optimized docker container.  </p></div>
         </div>
 
         <footer class="col-md-12">
@@ -154,5 +171,5 @@ docs/
 
 <!--
 MkDocs version : 0.17.5
-Build Date UTC : 2018-07-18 11:32:11
+Build Date UTC : 2018-07-18 12:54:21
 -->

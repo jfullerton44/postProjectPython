@@ -7,21 +7,21 @@
         
         
         
-        <link rel="shortcut icon" href="/img/favicon.ico">
-        <title>Post Project Python Backend</title>
-        <link href="/css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="/css/font-awesome-4.5.0.css" rel="stylesheet">
-        <link href="/css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="/css/highlight.css">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Usage - Post Project Python Backend</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
 
-        <script src="/js/jquery-1.10.2.min.js"></script>
-        <script src="/js/bootstrap-3.0.3.min.js"></script>
-        <script src="/js/highlight.pack.js"></script> 
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script> 
     </head>
 
     <body>
@@ -38,7 +38,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Post Project Python Backend</a>
+            <a class="navbar-brand" href="..">Post Project Python Backend</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -46,13 +46,13 @@
                 <!-- Main navigation -->
                 <ul class="nav navbar-nav">
                     <li >
-                        <a href="/">Home</a>
+                        <a href="..">Home</a>
                     </li>
                     <li >
-                        <a href="/credentials/">Credentials</a>
+                        <a href="../credentials/">Credentials</a>
                     </li>
-                    <li >
-                        <a href="/usage/">Usage</a>
+                    <li class="active">
+                        <a href="./">Usage</a>
                     </li>
                 </ul>
 
@@ -62,31 +62,42 @@
                         <i class="fa fa-search"></i> Search
                     </a>
                 </li>
+                    <li >
+                        <a rel="next" href="../credentials/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li class="disabled">
+                        <a rel="prev" >
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
             </ul>
         </div>
     </div>
 </div>
 
         <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#usage">Usage</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
 
-    <div class="row-fluid">
-      <div id="main-content" class="span12">
-        <h1 id="404-page-not-found" style="text-align: center">404</h1>
-        <p style="text-align: center"><strong>Page not found</strong></p>
-      </div>
-    </div>
-
-
+<h1 id="usage">Usage</h1>
+<p>The information to create a project will be entered into a google form at https://goo.gl/forms/xeNxgnVAnAmmIVJJ2. After the information is entered in the google form the information will show up in a google form called results located at https://docs.google.com/spreadsheets/d/14dduhfPnC8y9euY5pH7DKONmWR_wIV_UdOF0cSBPD9Q/edit?usp=sharing.  At this point each project can be reviewed and changed based on the preference of the ixo team. When the project characteristics are finialized the reviewer will place a '1' in the column titled verified. </p>
+<p>Once a '1' is found in that column all the information for that project will be grabbed by this program and the schema and form will be generated. Then all of the information will be uploaded to a mongo database and the project creator will be sent an email with instructions on how to finish creating their project.</p></div>
         </div>
 
         <footer class="col-md-12">
             <hr>
             <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script>var base_url = '';</script>
-        <script src="/js/base.js"></script>
-        <script src="/search/require.js"></script>
-        <script src="/search/search.js"></script>
+        <script>var base_url = '..';</script>
+        <script src="../js/base.js"></script>
+        <script src="../search/require.js"></script>
+        <script src="../search/search.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
